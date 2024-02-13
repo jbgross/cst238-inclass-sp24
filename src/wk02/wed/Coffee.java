@@ -6,6 +6,8 @@ public class Coffee {
     public static final int MAX_SYRUPS = 5;
     private int syrupCount;
     private int sizeInOunces;
+    private int foo;
+    private int bar;
 
     public Coffee() {
         System.out.println("constructor called");
@@ -21,6 +23,11 @@ public class Coffee {
             syrups = new String[MIN_SYRUPS];
         }
         syrupCount = 0;
+    }
+
+    public void setFooBar(int f, int b) {
+        foo = f;
+        bar = b;
     }
 
     public void addSyrup(String flavor) {
