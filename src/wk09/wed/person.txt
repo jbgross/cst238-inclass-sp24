@@ -1,0 +1,7 @@
+Hector 25 72
+Ariel 87 60
+Josh 30 70
+Henry 24 120
+Davie 12 26
+Joe 40 83
+Jeff 3 24

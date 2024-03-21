@@ -38,6 +38,7 @@ public class BubbleSort {
                     swap(data, i, i + 1);
                 }
             }
+            print(data);
             if(! wasSwap) {
                 System.out.println("early exit at k = " + k);
                 break;
