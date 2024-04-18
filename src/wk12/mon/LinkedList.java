@@ -13,6 +13,38 @@ public class LinkedList {
         return first == null;
     }
 
+    public void prepend(int value) {
+        if(isEmpty()) {
+            first = new Node(value);
+        } else {
+            Node newNode = new Node(value);
+            newNode.setNext(first);
+            first = newNode;
+        }
+    }
+
+    public int sum() {
+        if(isEmpty()) {
+            return 0;
+        } else {
+            Node n = first;
+            int sum = 0;
+            while(n != null) {
+                sum += n.getData();
+                n = n.getNext();
+            }
+            return sum;
+        }
+    }
+
+    public int sumRecursive() {
+        if(isEmpty()) {
+            return 0;
+        } else {
+            return first.sumRecursive();
+        }
+    }
+
     public void append(int value) {
         if(isEmpty()) {
             first = new Node(value);
@@ -20,6 +52,7 @@ public class LinkedList {
 //            first.setNext(new Node(value));
             Node last = first;
             while(last.hasNext()) {
+//            while(last != null) {
                 last = last.getNext();
             }
             last.setNext(new Node(value));
@@ -57,6 +90,14 @@ class Node {
         next = null;
     }
 
+    public int sumRecursive() {
+        if(hasNext()) {
+            return data + getNext().sumRecursive();
+        } else {
+            return data;
+        }
+    }
+
     public Node getNext() {
         return next;
     }
@@ -71,5 +112,9 @@ class Node {
 
     public String toString() {
         return ""+data;
+    }
+
+    public int getData() {
+        return data;
     }
 }
