@@ -11,6 +11,34 @@ public class BST {
         return root == null;
     }
 
+    public void inOrder() {
+        if(isEmpty()) {
+            System.out.println("Empty tree");
+        } else {
+            root.inOrder();
+            System.out.println();
+        }
+    }
+
+    public void preOrder() {
+        if(isEmpty()) {
+            System.out.println("Empty tree");
+        } else {
+            root.preOrder();
+            System.out.println();
+        }
+    }
+
+    public void postOrder() {
+        if(isEmpty()) {
+            System.out.println("Empty tree");
+        } else {
+            root.postOrder();
+            System.out.println();
+        }
+    }
+
+
     public int size() {
         if (isEmpty()) {
             return 0;
@@ -52,6 +80,43 @@ class Node {
 
     public boolean hasRight() {
         return right != null;
+    }
+
+    public void preOrder() {
+        System.out.print(data + " ");
+
+        if(hasLeft()) {
+            left.inOrder();
+        }
+
+        if(hasRight()) {
+            right.inOrder();
+        }
+    }
+
+    public void postOrder() {
+        if(hasRight()) {
+            right.inOrder();
+        }
+
+
+        if(hasLeft()) {
+            left.inOrder();
+        }
+
+        System.out.print(data + " ");
+    }
+
+    public void inOrder() {
+        if(hasLeft()) {
+            left.inOrder();
+        }
+
+        System.out.print(data + " ");
+
+        if(hasRight()) {
+            right.inOrder();
+        }
     }
 
     public boolean search(int value) {

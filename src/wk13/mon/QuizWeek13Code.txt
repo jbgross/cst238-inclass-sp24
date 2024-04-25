@@ -1,0 +1,19 @@
+// append for Node
+public void append(int data) {
+  if(hasNext()) {
+    next.append(data);
+  } else {
+    next = new Node(data);
+  }
+}
+
+// append for LinkedList
+public LinkedList append(int data) {
+  if(isEmpty()) {
+    head = new Node(data);
+  } else {
+    head.append(data);
+  }
+  return this;
+}
+
